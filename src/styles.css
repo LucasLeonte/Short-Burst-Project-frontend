@@ -1,0 +1,143 @@
+:root {
+    --bg: #0f1720;
+    --card: #0b1220;
+    --muted: #94a3b8;
+    --accent: #7c3aed;
+    --text: #e6eef8;
+}
+* {
+    box-sizing: border-box;
+}
+html,
+body,
+#app {
+    min-height: 100%;
+}
+body {
+    font-family: Inter, Segoe UI, Arial;
+    margin: 0;
+    background: linear-gradient(180deg, #071024 0%, #0d1530 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    padding: 32px;
+    min-height: 100vh;
+}
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+/* Keep the RAG manager the same max width and centered as the main container */
+.rag-manager {
+    max-width: 820px;
+    margin: 20px auto;
+}
+h1 {
+    margin: 0 0 16px;
+}
+form {
+    display: block;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* Text-like inputs keep full width; also match inputs without an explicit type attribute */
+input,
+input:not([type]),
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text);
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin: 0 6px 0 0;
+}
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted);
+}
+/* Place checkbox and its label text on same line */
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+}
+.controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+button {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button.muted {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--muted);
+}
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 16px;
+    border-radius: 10px;
+}
+.hidden {
+    display: none;
+}
+.label {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 6px;
+}
+.score {
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.explanation {
+    white-space: pre-wrap;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* JSON block styling for RAG output */
+.rag-json {
+    background: rgba(0, 0, 0, 0.12);
+    color: var(--text);
+    padding: 12px;
+    border-radius: 6px;
+    overflow: auto;
+    white-space: pre;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+        "Courier New", monospace;
+    font-size: 13px;
+}
